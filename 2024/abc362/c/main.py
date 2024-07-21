@@ -1,11 +1,15 @@
 N = int(input())
-# L = [list(map(int, input().split())) for _ in range(N)]
-# 安直にやってみる
-patternL = []
-for _ in range(N):
-  L, R = map(int, input().split())
-  patternL.append(list(range(L, R+1)))
+L, R = [0] * N, [0] * N
 
-# 無限に続くNの分だけfor文回してsum=0に探していたらTLEになる。。
+for i in range(N):
+  L[i], R[i] = map(int, input().split())
 
-print(patternL)
+if sum(L) > 0 and sum(R) < 0:
+  print('No')
+  exit()
+
+X = L.copy()
+sumX = sum(X)
+for i in range(N):
+  d = min(R[i]-L[i], -sumX)
+  
