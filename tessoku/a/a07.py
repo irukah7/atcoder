@@ -12,11 +12,10 @@ for i in range(n):
 # 累積和を計算する
 B = [0] * (d+1)
 for i in range(1, d+1):
-  B[i] = S[i] + S[i-1]
-  print(B)
-print(S)
-print(B)
+  B[i] = B[i-1] + S[i]
 
+for b in B:
+  print(b)
 
 # O(d*N)=(10^5 * 10^5) でTLE
 # S = [0] * (d+1)
