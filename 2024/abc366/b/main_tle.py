@@ -17,10 +17,15 @@ for i in range(m):
       tmp.append('*')
   ans.append(tmp)
 
-# 各行の末尾にある*を取り除く
-for i in range(m):
-  while ans[i][-1] == '*':
-    ans[i].pop()
+# 最後の行だけ回す
+cnt = 0
+for i in range(len(ans[m-1])-1, -1, -1):
+  if ans[m-1][i-1] == '*':
+    cnt -= 1
+  else:
+    break
+
+ans[m-1] =list(ans[m-1][:cnt-1])
 
 for a in ans:
   print(''.join(a))
