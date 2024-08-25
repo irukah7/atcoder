@@ -1,26 +1,18 @@
 N = int(input())
 S = [input() for _ in range(N)]
 
-# 最大値Mを取得する
-m = 0
-for s in S:
-  m = max(m, len(s))
+# SiのMax文字列を取得する
+m = max(map(len, S))
+# 「Tiの末尾は＊ではない」を一旦無視して構成する
+T = [['*'] * N for _ in range(m)]
 
-revS = list(reversed(S))
-ans = []
+for i in range(N):
+  for j in range(len(S[i])):
+    T[j][N-i-1] = S[i][j]
+
+# 「Tiの末尾は＊ではない」ので削除する
 for i in range(m):
-  tmp = []
-  for j in range(len(S)):
-    if len(revS[j])-1 >= i:
-      tmp.append(revS[j][i])
-    else:
-      tmp.append('*')
-  ans.append(tmp)
+  while T[i][-1] == '*':
+    T[i].pop()
 
-# 各行の末尾にある*を取り除く
-for i in range(m):
-  while ans[i][-1] == '*':
-    ans[i].pop()
-
-for a in ans:
-  print(''.join(a))
+  print(''.join(T[i]))
