@@ -2,7 +2,7 @@ A, B, C = map(int, input().split())
 
 # 日を跨ぐ場合
 if B > C:
-  # C時より大きくてB時より小さかったら寝ているので
+  # C時より大きくてB時より小さかったら起きているので
   if C < A < B:
     print('Yes')
   else:
