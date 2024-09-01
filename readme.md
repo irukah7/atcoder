@@ -38,3 +38,9 @@ $ accs
 [WARNING] the problem "https://atcoder.jp/contests/abc353/tasks/abc353_a" is specified to submit, but no samples were downloaded in this directory. this may be mis-operation
 Are you sure? Please type "abca"
 ```
+
+## メモ
+vi ~/.zshrc の中身
+```
+python main.pyではなくpython3 main.pyにする
+```
