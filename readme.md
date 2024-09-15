@@ -44,3 +44,22 @@ vi ~/.zshrc の中身
 ```
 python main.pyではなくpython3 main.pyにする
 ```
+
+* cpythonで提出したい時
+  * zshrc or profileに以下を記述する
+    * alias accs='acc s -- main.py --language 5055'
+* 'oj login https://beta.atcoder.jp'/の時にopensslでエラー（SSLError）が起きた
+  * zshrcに以下を記述したら直った
+    * export PYENV_ROOT="$HOME/.pyenv"
+    * export PATH="$PYENV_ROOT/bin:$PATH"
+    * eval "$(pyenv init -)"
+* oj -hでpython3.7がno such fileの時(Python3.9.6使っているつもりだが、、pathが正しく通ってない)
+  * eval "$(pyenv init --path)"をzshrcに追加すると消えた
+
+## 主原因
+* online-judge-toolsをインストールしたのにacc check-ojを実行してonline-judge-tools is not available.と出力された場合の解決方法
+  * which ojした時のpathとacc configで出力した時のoj-pathが一致していなかった
+    * which oj: /Users/m_hikaru/.pyenv/shims/oj
+    * acc config: oj-path: /Users/m_hikaru/.anyenv/envs/pyenv/shims/oj
+  * acc configのパスを指定し直す
+    * acc config oj-path /Users/m_hikaru/.pyenv/shims/oj
