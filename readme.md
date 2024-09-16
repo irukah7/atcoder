@@ -12,7 +12,7 @@ $ oj login https://beta.atcoder.jp/
 
 ### 問題のダウンロード
 ```
-$ cd ~/Documents/atcoder
+$ cd ~/Documents/atcoder/2024
 $ acc n abc353
 ```
 

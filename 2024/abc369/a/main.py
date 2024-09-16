@@ -1,10 +1,8 @@
 A, B = map(int, input().split())
-cnt = 0
-for x in range(-220, 220):
-  tmp = [x, A, B]
-  tmp.sort()
 
-  if tmp[2] - tmp[1] == tmp[1] - tmp[0]:
-    cnt += 1
-
-print(cnt)
+if A == B:
+  print(1)
+elif (A+B) % 2 == 0:
+  print(3)
+else:
+  print(2)
