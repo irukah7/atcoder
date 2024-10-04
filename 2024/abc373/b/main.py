@@ -2,7 +2,7 @@ S = input()
 
 ch = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
 # 前の文字とどのくらい離れているか計算する
-# MGJYIZDKSBHPVENFLQURTCWOAX
+
 ans = 0
 tmp = S.index("A")
 for c in ch:
@@ -16,9 +16,4 @@ for c in ch:
   tmp = S.index(c)
 
 print(ans)
-
-
-
-# MGJYIZDKSBHPVENFLQURTCWOAX
-# ABCDEFGHIJKLMNOPQRSTUVWXYZ
 
