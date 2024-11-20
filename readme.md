@@ -8,6 +8,9 @@ atcoder-cli, online-judge-toolsのそれぞれで、AtCoderのユーザーIDと�
 ```
 $ acc login
 $ oj login https://beta.atcoder.jp/
+
+user: moriya214
+password: .........
 ```
 
 ### 問題のダウンロード
